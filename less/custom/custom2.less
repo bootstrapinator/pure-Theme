@@ -1,0 +1,598 @@
+  // Custom 
+
+body {
+  background: url('../img/pure/texture-light.png') !important;
+  padding-top: 110px !important;
+
+  .navbar-inner {
+    background: url('../img/pure/texture-dark.png');
+  }
+
+  .container {
+    background: lighten(@gray, 65%);
+    padding: 12px 24px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 6px #999999;
+    -moz-box-shadow: 0px 0px 6px #999999;
+    box-shadow: 0px 0px 6px #999999;
+    .border-radius;
+    opacity: 0.75;
+  }
+
+  .navbar {
+
+    .container {
+      background: none;
+      padding: 0;
+      margin-bottom: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+
+  .subnav-fixed {
+    top: 70px !important;
+  }
+}
+
+// BUTTON STYLES
+// -------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin-bottom: 0; // For input.btn
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @grayDark;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  vertical-align: middle;
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@white,5%), darken(@white,10%));
+  border: 1px solid darken(@white, 18%);
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  .border-radius(15px);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  .box-shadow(@shadow);
+  cursor: pointer;
+
+  // Give IE7 some love
+  .reset-filter();
+  .ie7-restore-left-whitespace();
+}
+
+// Hover state
+.btn:hover {
+  color: @grayDarker;
+  text-decoration: none;
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@white,10%), darken(@white,15%));
+}
+
+// Focus state for keyboard and accessibility
+.btn:focus {
+  .tab-focus();
+}
+
+// Active state
+.btn.active,
+.btn:active {
+  background-image: none;
+  @shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  .box-shadow(@shadow);
+  background-color: darken(@white, 10%);
+  background-color: darken(@white, 15%) e("\9");
+  outline: 0;
+}
+
+// Disabled state
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  .opacity(85);
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: 9px 14px;
+  font-size: @baseFontSize + 2px;
+  line-height: normal;
+  .border-radius(20px);
+}
+.btn-large [class^="icon-"] {
+  margin-top: 1px;
+}
+
+.jumbotron .btn-large {
+  -webkit-border-radius: 25px !important;
+  -moz-border-radius: 25px !important;
+  border-radius: 25px !important;
+}
+
+// Small
+.btn-small {
+  padding: 5px 9px;
+  font-size: @baseFontSize - 2px;
+  line-height: @baseLineHeight - 2px;
+}
+.btn-small [class^="icon-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: 2px 6px;
+  font-size: @baseFontSize - 2px;
+  line-height: @baseLineHeight - 4px;
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Set text color
+// -------------------------
+.btn-primary,
+.btn-primary:hover,
+.btn-warning,
+.btn-warning:hover,
+.btn-danger,
+.btn-danger:hover,
+.btn-success,
+.btn-success:hover,
+.btn-info,
+.btn-info:hover,
+.btn-inverse,
+.btn-inverse:hover {
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  color: @white;
+}
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-dark.active {
+  color: rgba(255,255,255,.75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-primary {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@linkColor,5%), darken(@linkColor,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@linkColor,5%), darken(@linkColor,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@linkColor,5%), darken(@linkColor,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@linkColor,5%), darken(@linkColor,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@linkColor,5%), darken(@linkColor,10%));
+  border: 1px solid darken(@linkColor, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@linkColor,10%), darken(@linkColor,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @linkColor;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@linkColor, 15%) e("\9");
+  }
+}
+// Warning appears are orange
+.btn-warning {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@orange,5%), darken(@orange,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@orange,5%), darken(@orange,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@orange,5%), darken(@orange,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@orange,5%), darken(@orange,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@orange,5%), darken(@orange,10%));
+  border: 1px solid darken(@orange, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@orange,10%), darken(@orange,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @orange;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@orange, 15%) e("\9");
+  }
+}
+// Danger and error appear as red
+.btn-danger {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@red,5%), darken(@red,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@red,5%), darken(@red,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@red,5%), darken(@red,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@red,5%), darken(@red,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@red,5%), darken(@red,10%));
+  border: 1px solid darken(@red, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@red,10%), darken(@red,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @red;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@red, 15%) e("\9");
+  }
+}
+// Success appears as green
+.btn-success {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@green,5%), darken(@green,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@green,5%), darken(@green,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@green,5%), darken(@green,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@green,5%), darken(@green,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@green,5%), darken(@green,10%));
+  border: 1px solid darken(@green, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@green,10%), darken(@green,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @green;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@green, 15%) e("\9");
+  }
+}
+// Info appears as a neutral blue
+.btn-info {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@blue,5%), darken(@blue,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@blue,5%), darken(@blue,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@blue,5%), darken(@blue,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@blue,5%), darken(@blue,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@blue,5%), darken(@blue,10%));
+  border: 1px solid darken(@blue, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@blue,10%), darken(@blue,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @blue;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@blue, 15%) e("\9");
+  }
+}
+// Inverse appears as dark gray
+.btn-inverse {
+  background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@grayDark,5%), darken(@grayDark,10%));
+  background: url(../img/pure/noise.png), -moz-linear-gradient(top, lighten(@grayDark,5%), darken(@grayDark,10%));
+  background: url(../img/pure/noise.png), -o-linear-gradient(top, lighten(@grayDark,5%), darken(@grayDark,10%));
+  background: url(../img/pure/noise.png), -ms-linear-gradient(top, lighten(@grayDark,5%), darken(@grayDark,10%));
+  background: url(../img/pure/noise.png), linear-gradient(top, lighten(@grayDark,5%), darken(@grayDark,10%));
+  border: 1px solid darken(@grayDark, 18%);
+
+  &:hover {
+    text-decoration: none;
+    background: url(../img/pure/noise.png), -webkit-linear-gradient(top, lighten(@grayDark,10%), darken(@grayDark,15%));
+  }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:active, &.active, &.disabled, &[disabled] {
+    background-color: @grayDark;
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@grayDark, 15%) e("\9");
+  }
+}
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+  &.large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+}
+
+
+
+/* Pure Table Styles */
+@table-border-color: hsl(207, 74%, 72%); /* Pure */
+@table-background-color: hsl(200, 66%, 92%);
+@table-background-color-odd:  hsl(207, 74%, 82%);
+@table-backgournd-color-header: hsl(201, 41%, 52%);
+
+// BASELINE STYLES
+// ---------------
+
+.table {
+  background: @table-background-color; /* Pure */
+  // Cells
+  th,
+  td {
+    border-top: 1px solid @table-border-color; /* Pure */
+  }
+  th {
+    color: @white;
+    background: @table-backgournd-color-header;
+  }
+}
+
+
+
+// CONDENSED TABLE W/ HALF PADDING
+// -------------------------------
+
+.table-condensed {
+  th,
+  td {
+    padding: 4px 5px;
+  }
+}
+
+
+// BORDERED VERSION
+// ----------------
+
+.table-bordered {
+  border: 1px solid @table-border-color; /* Pure */
+}
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody {
+    tr:nth-child(odd) td,
+    tr:nth-child(odd) th {
+      background-color: @table-background-color-odd; /* Pure */
+    }
+  }
+}
+
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.table {
+  tbody tr:hover td,
+  tbody tr:hover th {
+    background-color: @table-border-color;
+  }
+}
+
+// NAVBAR (FIXED AND STATIC)
+// -------------------------
+
+
+// COMMON STYLES
+// -------------
+
+.navbar {
+  border-bottom: 5px solid darken(@linkColor, 5%);
+}
+
+// Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
+.navbar-inner {
+  padding-left:  20px;
+  padding-right: 20px;
+  #gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  .border-radius(4px);
+  @shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  .box-shadow(@shadow);
+}
+
+// Navbar button for toggling navbar items in responsive layouts
+.btn-navbar {
+  display: none;
+  float: right;
+  padding: 7px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  .buttonBackground(@navbarBackgroundHighlight, @navbarBackground);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+  .box-shadow(@shadow);
+}
+.btn-navbar .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #f5f5f5;
+  .border-radius(1px);
+  .box-shadow(0 1px 0 rgba(0,0,0,.25));
+}
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+// Override the default collapsed state
+.nav-collapse.collapse {
+  height: auto;
+}
+
+
+// Brand, links, text, and buttons
+.navbar {
+  // Hover and active states
+  .brand:hover {
+    text-decoration: none;
+  }
+  // Website or project name
+  .brand {
+    float: left;
+  }
+  .nav {
+    float: right !important;
+  }
+}
+
+
+// FIXED NAVBAR
+// ------------
+
+.navbar-fixed-top {
+
+  .brand {
+    float: left !important;
+    padding: 14px 0 0 0 !important;
+    margin: 0 !important;
+  }
+
+  li.divider-vertical {
+    height: 67px;
+  }
+}
+
+// NAVIGATION
+// ----------
+
+// Links
+.navbar .nav > li > a {
+  padding: 24px 10px;
+  line-height: 19px;
+}
+
+// Side Nav
+.side-nav {
+  background-color: none;
+}
+
+
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Links
+@linkColor:             @blue;
+@linkColorHover:        darken(@linkColor, 15%);
+
+// Grays
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+// Accent colors
+@blue:                  #0073D2;
+@blueDark:              #0058AD;
+@green:                 #8BC249;
+@red:                   #DB4529;
+@yellow:                #E9C74D;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Typography
+@baseFontSize:          13px;
+@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseLineHeight:        18px;
+@textColor:             @grayDark;
+
+// Buttons
+@primaryButtonBackground:    @linkColor;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Z-index master list
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindexDropdown:          1000;
+@zindexPopover:           1010;
+@zindexTooltip:           1020;
+@zindexFixedNavbar:       1030;
+@zindexModalBackdrop:     1040;
+@zindexModal:             1050;
+
+// Sprite icons path
+@iconSpritePath:          "../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+
+// Input placeholder text color
+@placeholderText:         @grayLight;
+
+// Hr border color
+@hrBorder:                @grayLighter;
+
+// Navbar
+@navbarHeight:                    40px;
+@navbarBackground:                @grayDarker;
+@navbarBackgroundHighlight:       @grayDark;
+@navbarLinkBackgroundHover:       transparent;
+
+@navbarText:                      @grayLight;
+@navbarLinkColor:                 @grayLight;
+@navbarLinkColorHover:            @white;
+
+// Form states and alerts
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+@successText:             #468847;
+@successBackground:       #dff0d8;
+@successBorder:           darken(spin(@successBackground, -10), 5%);
+
+@infoText:                #3a87ad;
+@infoBackground:          #d9edf7;
+@infoBorder:              darken(spin(@infoBackground, -10), 7%);
