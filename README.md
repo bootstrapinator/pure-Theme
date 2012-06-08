@@ -1,7 +1,7 @@
-Pure Them for TWITTER BOOTSTRAP
+Pure Theme for TWITTER BOOTSTRAP
 =================
 
-Pure theme is a clean theam with several subtle textures that really give the bootstrap framework an amazing look and feal.
+Pure theme is a clean theme with several subtle textures that really give the bootstrap framework an amazing look and feel.
 
 
 Versioning
